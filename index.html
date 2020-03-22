@@ -144,7 +144,7 @@
 
 
             <button class="button is-primary" v-on:click="setCase('d')">Không Đúng</button>
-            <button class="button is-link"  v-on:click="setConclusion('selfisolate')">Đúng</button>
+            <button class="button is-link"  v-on:click="setConclusion('selfmonitor')">Đúng</button>
           </div>
 
           <div class="questionbox" v-if="cases.d">
@@ -182,32 +182,22 @@
             <h3>Liên tục theo dõi sức khoẻ cá nhân</h3>
             <h4>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h4>
             <p>
-              Tuy nhiên, có một cơ hội mà bạn có thể bị bệnh kể từ khi nó có ít hơn 14 ngày kể từ khi bạn đi du lịch. Bạn nên tự cách ly cho đến 14 ngày sau khi trở về nhà. Tự cô lập có nghĩa là don lồng đi đến bất kỳ nơi công cộng nào, ở nhà và don có bất kỳ du khách nào. Nếu bạn có thắc mắc, hãy truy cập https://www.saskatchewan.ca/coronavirus.
+              Tuy nhiên, bạn có thể trong giai đoạn ủ  bệnh dưới 14 ngày. Bạn nên tự cách ly cho đến 14 ngày sau khi trở về nhà.
+              <br/>
+              Tự cách ly có nghĩa là không  đi đến bất kỳ nơi công cộng nào, ở nhà và không đón có bất kỳ khách nào.
+
             </p>
+            <p>Hãy luôn giữ vệ sinh, sử dụng khẩu trang, hạn chế tiếp xúc và dùng chung các đồ dùng gia đình</p>
             <p>
               Nếu bạn nhận được bất kỳ triệu chứng COVID-19, hãy tự đánh giá lại.
             </p>
+            <p>Thực hiện tờ khai y tế  tại: <a href="https://tokhaiyte.vn/">https://tokhaiyte.vn/</a></p>
             <p>
               Nếu bạn đang gặp phải các triệu chứng khác và muốn đánh giá, hãy truy cập <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
             </p>
 
           </div>
 
-          <div class="questionbox" v-if="conclusion == 'selfisolate'">
-            <h3>Cần tự cách ly</h3>
-            <h4>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h4>
-            <p>
-              Tuy nhiên, có một cơ hội mà bạn có thể bị bệnh kể từ khi nó có ít hơn 14 ngày kể từ khi bạn đi du lịch. Bạn nên tự cách ly cho đến 14 ngày sau khi trở về nhà. Tự cô lập có nghĩa là don lồng đi đến bất kỳ nơi công cộng nào, ở nhà và don có bất kỳ du khách nào. Nếu bạn có thắc mắc, hãy truy cập https://www.saskatchewan.ca/coronavirus.
-            </p>
-            <p>
-              Nếu bạn nhận được bất kỳ triệu chứng COVID-19, hãy tự đánh giá lại.
-            </p>
-            <p>
-              Nếu bạn đang gặp phải các triệu chứng khác và muốn đánh giá, hãy truy cập
-              <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
-            </p>
-
-          </div>
 
           <div class="questionbox" v-if="conclusion == 'yes'">
             <h3 style="color: darkred;">

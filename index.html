@@ -202,9 +202,10 @@
 
           <div class="questionbox" v-if="conclusion == 'yes'">
             <h3 style="color: darkred;">
-              Vui lòng <b>ở tại nhà và không ra ngoài, sử  dụng khẩu trang, rửa tay và xúc miệng diệt khuẩn thường xuyên để tránh lây bệnh cho người thân</b>.</h3>
+              Vui lòng <b>ở tại nhà và không ra ngoài, sử  dụng khẩu trang, rửa tay và súc miệng diệt khuẩn thường xuyên để tránh lây bệnh cho người thân</b>.</h3>
+            <p>Bạn hãy tuần tự làm những việc sau:</p>
               <ul>
-                <li>Hãy bình tĩnh, không hoảng loạng và tránh lây nhiễm ra người thân và cộng đồng</li>
+                <li>Hãy bình tĩnh, không hoảng loạn và tránh lây nhiễm ra người thân và cộng đồng</li>
 
                 <li>Thông báo cho người thân và những người liên quan bằng điện thoại, Zalo để  được hỗ trợ thực hiện tờ khai y tế  tại: <a href="https://tokhaiyte.vn/">https://tokhaiyte.vn/</a></li>
                 </li>
@@ -215,7 +216,7 @@
 
                 <li>Hãy cẩn trọng trong mọi quyết định và hành động của mình để  giảm tối đa việc lây lân ra cộng đồng.
                 </li>
-                <li>Ghi chú ra giấy những địa điểm hoặc những người bạn đã tiếp xúc trong suốt 14 ngày qua
+                <li>Ghi chú ra giấy những địa điểm và những người bạn đã tiếp xúc trong suốt 14 ngày qua
                 </li>
 
               </ul>
@@ -224,10 +225,10 @@
 
 
           </div>
-          <div class="questionbox" v-if="cases.stayhome">
+          <div class="questionbox" v-if="conclusion == 'stayhome'">
             <h3 style="color: darkred;">
 
-              Vui lòng <b>ở tại nhà và không ra ngoài, sử  dụng khẩu trang, rửa tay và xúc miệng diệt khuẩn thường xuyên để tránh lây bệnh cho người thân</b>.
+              Vui lòng <b>ở tại nhà và không ra ngoài, sử  dụng khẩu trang, rửa tay và súc miệng diệt khuẩn thường xuyên để tránh lây bệnh cho người thân</b>.</h3>
               <ul>
                 <li>Thực hiện tờ khai y tế  tại: <a href="https://tokhaiyte.vn/">https://tokhaiyte.vn/</a></li>
                 <li>Không tự đi khám hay kiểm tra y tế để tránh lây nhiễm ra cộng đồng</li>
@@ -240,7 +241,7 @@
               </ul>
 
               <br/>
-              Hãy thông báo cho người tiếp nhận là bạn đang có những triệu chứng của COVID-19.</h3>
+              Hãy thông báo cho người tiếp nhận là bạn đang có những triệu chứng của COVID-19.
 
           </div>
           <br/>

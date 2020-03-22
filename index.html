@@ -89,12 +89,12 @@
               <li>Mất ý thức</li>
             </ul>
 
-            <button class="button is-primary">Không Đúng</button>
-            <button class="button is-link">Đúng</button>
+            <button class="button is-primary" v-on:click="setCase('a')">Không Đúng</button>
+            <button class="button is-link" v-on:click="setCase('yes')">Đúng</button>
           </div>
 
-          <div class="questionbox">
-            <h3>Bạn có đang có những triệu chứng sau không:</h3>
+          <div class="questionbox" v-if="cases.a">
+            <h3>(a) Bạn có đang có những triệu chứng sau không:</h3>
             <ul>
               <li>Thở gấp</li>
               <li>
@@ -105,27 +105,29 @@
 
             </ul>
 
-            <button class="button is-primary">Không Đúng</button>
-            <button class="button is-link">Đúng</button>
+            <button class="button is-primary" v-on:click="setCase('b')">Không Đúng</button>
+            <button class="button is-link" v-on:click="setCase('yes')">Đúng</button>
           </div>
 
-          <div class="questionbox">
-            <h3>Bạn có đang có những triệu chứng sau không:</h3>
+          <div class="questionbox" v-if="cases.b">
+            <h3>(b) Bạn có đang có những triệu chứng sau không:</h3>
             <ul>
-              <li>Sốt cao hơn 38°C
-                </li>
+              <li>Sốt cao hơn 38°C      </li>
               <li>Ho</li>
-              <li>Thở gấp</li>
+              <li>Hắt xì̀</li>
+              <li>Hắt xì̀</li>
+              <li>Đau họng</li>
+              <li>Thở gấ p hoặc khó thở</li>
             </ul>
 
-            <button class="button is-primary">Không Đúng</button>
-            <button class="button is-link">Đúng</button>
+            <button class="button is-primary" v-on:click="setCase('c')">Không Đúng</button>
+            <button class="button is-link" v-on:click="setCase('stayhome')">Đúng</button>
           </div>
 
 
 
-          <div class="questionbox">
-            <h3>Trong 14 ngày qua, bạn có tiếp xúc gần với người được xác nhận là có COVID-19 không?</h3>
+          <div class="questionbox" v-if="cases.c">
+            <h3>(c) Trong 14 ngày qua, bạn có tiếp xúc gần với người được xác nhận là có COVID-19 không?</h3>
             Một người tiếp xúc gần là
             <ul>
               <li>Người chăm sóc cho cá nhân, bao gồm nhân viên y tế, thành viên gia đình hoặc người chăm sóc khác,
@@ -141,7 +143,7 @@
 
 
 
-          <div class="questionbox">
+          <div class="questionbox" v-if="cases.travel">
             <h3>Trong 14 ngày qua, bạn có đi du lịch nước ngoài hoặc tới những khu vực có người nhiễm COVID-19?</h3>
 
             Bao gồm quá cảnh hoặc đi qua khu vực sân bay.
@@ -151,7 +153,7 @@
           </div>
 
 
-          <div class="questionbox">
+          <div class="questionbox" v-if="cases.closecontact">
             <h3>Bạn có tiếp xúc với người đã được xác nhận là có COVID-19 trong vòng 14 ngày kể từ khi các triệu chứng của bạn bắt đầu không?</h3>
 
 
@@ -159,20 +161,11 @@
             <button class="button is-link">Đúng</button>
           </div>
 
-          <div class="questionbox">
-            <h3 style="color: darkred;">Vui lòng đến trực tiếp phòng cấp cứu gần nhất có kiểm tra COVID-19 bằng cách gọi cấp cứu 115, lập tức sử dụng bảo hộ cá nhân để tránh lây cho những người xung quanh.
-              Không nên tự di chuyển hoặc sử dụng các phương tiện công cộng, Taxi.
-            <br/>
-            <br/>
-              Hãy thông báo cho người tiếp nhận là bạn đang có những triệu chứng của COVID-19.</h3>
-
-
-          </div>
 
 
 
 
-          <div class="questionbox">
+          <div class="questionbox" v-if="cases.no1">
             <h3>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h3>
             <p>
             Nếu bạn cảm thấy bất kỳ triệu chứng COVID-19, hãy tự đánh giá lại. Nếu bạn cần thêm thông tin, hãy truy cập <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
@@ -180,9 +173,7 @@
           </div>
 
 
-
-
-          <div class="questionbox">
+          <div class="questionbox" v-if="cases.no2">
             <h3>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h3>
             <p>
               Tuy nhiên, có một cơ hội mà bạn có thể bị bệnh kể từ khi nó có ít hơn 14 ngày kể từ khi bạn đi du lịch. Bạn nên tự cách ly cho đến 14 ngày sau khi trở về nhà. Tự cô lập có nghĩa là don lồng đi đến bất kỳ nơi công cộng nào, ở nhà và don có bất kỳ du khách nào. Nếu bạn có thắc mắc, hãy truy cập https://www.saskatchewan.ca/coronavirus.
@@ -196,8 +187,15 @@
 
           </div>
 
+          <div class="questionbox" v-if="cases.yes">
+            <h3 style="color: darkred;">Vui lòng đến trực tiếp phòng cấp cứu gần nhất có kiểm tra COVID-19 bằng cách gọi cấp cứu 115, lập tức sử dụng bảo hộ cá nhân để tránh lây cho những người xung quanh.
+              Không nên tự di chuyển hoặc sử dụng các phương tiện công cộng, Taxi.
+              <br/>
+              <br/>
+              Hãy thông báo cho người tiếp nhận là bạn đang có những triệu chứng của COVID-19.</h3>
 
 
+          </div>
 
 
           <br/>
@@ -221,15 +219,35 @@
 
 
     <script>
+      const cases_default =  {
+        'a': false,
+        'b': false,
+        'c': false,
+        'yes': false,
+      };
+
       new Vue({
         el: "#app",
         data: {
-          input: "# hello"
+          cases: cases_default
         },
         computed: {
 
         },
         methods: {
+          setCase: function(c){
+            console.log("case: " + c);
+
+            if (c === 'yes'){
+              console.log("c === 'yes'");
+              this.cases = cases_default
+            } else {
+              this.cases['yes'] = false;
+            }
+            this.cases[c] = true;
+
+
+          }
 
         }
       });

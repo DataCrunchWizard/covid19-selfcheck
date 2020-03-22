@@ -90,6 +90,8 @@
 
           </blockquote>
 
+          <hr/>
+
           <h2>Những câu hỏi để bạn tự kiểm tra</h2>
 
           <div class="questionbox">
@@ -139,8 +141,6 @@
             <button class="button is-link" v-on:click="setConclusion('stayhome')">Đúng</button>
           </div>
 
-
-
           <div class="questionbox" v-if="cases.c">
             <h3>(c) Trong 14 ngày qua, bạn có đi đến những nơi có dịch tại Việt Nam hoặc quốc tế không, bạn có đi du lịch nước ngoài hoặc tới khu vực sân bay?</h3>
 
@@ -163,8 +163,6 @@
             <button class="button is-primary" v-on:click="setConclusion('healthdeclaration')">Không Đúng</button>
             <button class="button is-link"  v-on:click="setConclusion('selfmonitor')">Đúng</button>
           </div>
-
-
 
 
           <div class="questionbox" v-if="conclusion == 'healthdeclaration'">
@@ -199,7 +197,6 @@
             </p>
 
           </div>
-
 
           <div class="questionbox" v-if="conclusion == 'yes'">
             <h3 style="color: darkred;">
@@ -245,6 +242,8 @@
               Hãy thông báo cho người tiếp nhận là bạn đang có những triệu chứng của COVID-19.
 
           </div>
+
+          <hr/>
           <br/>
           <h3>Làm lại</h3>
           <p>Để thực hiện lại, bạn hãy click vào <a href=".">đây</a></p>
@@ -259,6 +258,8 @@
           <div class="fb-comments" data-href="https://lambdademy.github.io/covid19-selfcheck/" data-width="" data-numposts="50"></div>
         </div>
         <div class="column" style="width: 100%">
+
+          <hr/>
 
           <h2>Những hình ảnh bạn có thể chia sẻ</h2>
 

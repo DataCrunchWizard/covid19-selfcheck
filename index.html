@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Markdown Editor</title>
+    <title>Công cụ tự đánh giá về khả năng mắc COVID-19</title>
     <script src="https://unpkg.com/vue"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
 
@@ -9,7 +9,14 @@
 
 
     <style>
-
+      .questionbox {
+        border: gray 1px dashed;
+        padding: 20px;
+        border-radius: 5px;
+        background: whitesmoke;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
 
     </style>
 
@@ -21,29 +28,33 @@
     <div class="container" id="app">
       <div class="columns content is-medium">
         <div class="column">
-          <h1 class="is-large"> Công cụ tự đánh giá về  khả năng mắc COVID-19</h1>
-          <p>This self-assessment tool, developed with the BC Ministry of Health, will help determine whether you may need further assessment or testing for COVID-19. You can complete this assessment for yourself, or on behalf of someone else, if they are unable to.</p>
-          <h3>Who should be tested for COVID-19?</h3>
+          <h1 class="is-large">Công cụ tự đánh giá về  khả năng mắc COVID-19</h1>
           <p>
-            People with respiratory symptoms who are:
-            <ul>
-              <li>Hospitalized, or likely to be hospitalized
+            Công cụ tự đánh giá này, được phát triển dự trên tham khảo của Bộ Y tế  <a href="https://covid19.thrive.health/">British Columbia</a> , sẽ giúp xác định xem bạn có cần đánh giá hoặc xét nghiệm thêm cho COVID-19 hay không.
+            Bạn có thể hoàn thành đánh giá này cho chính mình, hoặc thay mặt người khác, nếu họ không thể.
+
+
+          <h3>Ai nên được xét nghiệm COVID-19?</h3>
+          <p>
+            Những người có triệu chứng hô hấp bao gồm:
+          <ul>
+              <li>Nhập viện, hoặc có khả năng nhập viện
               </li>
-              <li>Health Care Workers
+              <li>Nhân viên y tế
               </li>
-              <li>Residents of long term care facilities
+              <li>Nhân viên của các cơ sở chăm sóc sức khoẻ (ví dụ viện dưỡng lão)
               </li>
-              <li>Part of an investigation of a cluster or outbreak
+              <li>
+                Nằm trong các tổ  điều tra dịch
               </li>
             </ul>
           </p>
-          <h3>Who should be tested for COVID-19?</h3>
+          <h3>Ai không cần xét nghiệm COVID-19?</h3>
           <p>
-            Who does not need to be tested for COVID-19?
             <ul>
-              <li>People without symptoms
+              <li>Những người không có triệu chứng
               </li>
-              <li>Patients with mild respiratory symptoms who can be managed at home, including returning travellers with an onset of illness within 14 days of return to Canada
+              <li>Hoặc không có yếu tố dịch tể và không được chỉ định bởi các nhà chuyên môn.
               </li>
 
             </ul>
@@ -51,18 +62,156 @@
           </p>
 
           <p>
-            The BC Ministry of Health strongly urges anyone who has symptoms - including a fever, cough, sneezing, sore throat, or difficulty breathing - to self-isolate for 14 days. To protect yourself while out in public, wash your hands frequently and maintain a distance of about 2 metres from others. For more information on COVID-19, refer to BCCDC's COVID-19 website.
+            Cơ quan y tế đề xuất rằng bất cứ ai có những triệu chứng - bao gồm sốt, ho, hắt xì, đau họng, hoặc khó thở , luôn phải tự cách ly tiếp xúc với người khác và liên hệ với cơ quan y tế để kiểm tra.
+            Không tự tiện đi khám bệnh nếu chưa được tư vấn rõ hoặc khi đi khám phải khai báo từ ban đầu có nguy cơ và triệu chứng để nhân viên y tế có biện pháp xử lý hợp lý.
+
+          </p>
+          <p>
+
           </p>
 
           <blockquote>
-            The province has created a phone service to provide non-medical information about COVID-19, including the latest information on travel recommendations and social distancing. Information is available in more than 110 languages, 7:30 a.m. - 8 p.m. Pacific Standard Time at 1-888-COVID19 (1-888-268-4319) or via text message at 604-630-0300.
-
-            For the most up to date non-medical information, including the latest travel restrictions and provincial and federal programs, visit the BC Government’s COVID-19 Provincial Support and Information.
+            Để  bảo đảm an toàn cho bạn khi ở nơi công cộng, hãy rửa tay thường xuyên và luôn giữ khoảng cách tố i thiếu 2 mét đối với người khác.
+            Để tìm hiểu thông tin về  COVID-19, các bạn có thể tham khảo tại  <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.
+            For more information on COVID-19, refer to BCCDC's COVID-19 website.
           </blockquote>
 
-          <div class="fb-share-button" data-href="https://lambdademy.github.io/covid19-selfcheck/" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flambdademy.github.io%2Fcovid19-selfcheck%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+          <h2>Những câu hỏi để bạn tự kiểm tra</h2>
+
+          <div class="questionbox">
+            <h3>Bạn có đang có những triệu chứng sau không:</h3>
+            <ul>
+              <li>
+                Rất khó thở</li>
+              <li>Rất đau ngực</li>
+              <li>Ngủ dậy rất khó khăn</li>
+              <li>Cảm thấy bối rối</li>
+              <li>Mất ý thức</li>
+            </ul>
+
+            <button class="button is-primary">Không Đúng</button>
+            <button class="button is-link">Đúng</button>
+          </div>
+
+          <div class="questionbox">
+            <h3>Bạn có đang có những triệu chứng sau không:</h3>
+            <ul>
+              <li>Thở gấp</li>
+              <li>
+                Không thể nằm xuống vì cảm thấy khó thở
+                </li>
+              <li>Gặp khó khăn trong việc kiểm soát những bệnh mãn tính mà bạn có vì bệnh hô hấp hiện tại
+              </li>
+
+            </ul>
+
+            <button class="button is-primary">Không Đúng</button>
+            <button class="button is-link">Đúng</button>
+          </div>
+
+          <div class="questionbox">
+            <h3>Bạn có đang có những triệu chứng sau không:</h3>
+            <ul>
+              <li>Sốt cao hơn 38°C
+                </li>
+              <li>Ho</li>
+              <li>Thở gấp</li>
+            </ul>
+
+            <button class="button is-primary">Không Đúng</button>
+            <button class="button is-link">Đúng</button>
+          </div>
+
+
+
+          <div class="questionbox">
+            <h3>Trong 14 ngày qua, bạn có tiếp xúc gần với người được xác nhận là có COVID-19 không?</h3>
+            Một người tiếp xúc gần là
+            <ul>
+              <li>Người chăm sóc cho cá nhân, bao gồm nhân viên y tế, thành viên gia đình hoặc người chăm sóc khác,
+                hoặc những người có tiếp xúc gần gũi tương tự khác mà không sử dụng thiết bị bảo vệ cá nhân phù hợp (khẩu trang y tế hoặc găng tay) HOẶC
+                </li>
+              <li>Những người sống với hoặc tiếp xúc gần gũi kéo dài (trong vòng 2 mét) với người đó trong khi họ bị nhiễm COVID-19 HOẶC</li>
+              <li>đã tiếp xúc trực tiếp với chất dịch truyền nhiễm cơ thể của người (ví dụ  bị ho hoặc hắt hơi) trong khi không đeo thiết bị bảo vệ cá nhân được khuyến nghị (khẩu trang y tế  hoặc găng tay)</li>
+            </ul>
+
+            <button class="button is-primary">Không Đúng</button>
+            <button class="button is-link">Đúng</button>
+          </div>
+
+
+
+          <div class="questionbox">
+            <h3>Trong 14 ngày qua, bạn có đi du lịch nước ngoài hoặc tới những khu vực có người nhiễm COVID-19?</h3>
+
+            Bao gồm quá cảnh hoặc đi qua khu vực sân bay.
+
+            <button class="button is-primary">Không Đúng</button>
+            <button class="button is-link">Đúng</button>
+          </div>
+
+
+          <div class="questionbox">
+            <h3>Bạn có tiếp xúc với người đã được xác nhận là có COVID-19 trong vòng 14 ngày kể từ khi các triệu chứng của bạn bắt đầu không?</h3>
+
+
+            <button class="button is-primary">Không Đúng</button>
+            <button class="button is-link">Đúng</button>
+          </div>
+
+          <div class="questionbox">
+            <h3 style="color: darkred;">Vui lòng đến trực tiếp phòng cấp cứu gần nhất có kiểm tra COVID-19 bằng cách gọi cấp cứu 115, lập tức sử dụng bảo hộ cá nhân để tránh lây cho những người xung quanh.
+              Không nên tự di chuyển hoặc sử dụng các phương tiện công cộng, Taxi.
+            <br/>
+            <br/>
+              Hãy thông báo cho người tiếp nhận là bạn đang có những triệu chứng của COVID-19.
+            </h3>
+
+
+          </div>
+
+
+
+
+          <div class="questionbox">
+            <h3>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h3>
+            <p>
+            Nếu bạn cảm thấy bất kỳ triệu chứng COVID-19, hãy tự đánh giá lại. Nếu bạn cần thêm thông tin, hãy truy cập <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
+
+          </div>
+
+
+
+
+          <div class="questionbox">
+            <h3>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h3>
+            <p>
+              Tuy nhiên, có một cơ hội mà bạn có thể bị bệnh kể từ khi nó có ít hơn 14 ngày kể từ khi bạn đi du lịch. Bạn nên tự cách ly cho đến 14 ngày sau khi trở về nhà. Tự cô lập có nghĩa là don lồng đi đến bất kỳ nơi công cộng nào, ở nhà và don có bất kỳ du khách nào. Nếu bạn có thắc mắc, hãy truy cập https://www.saskatchewan.ca/coronavirus.
+            </p>
+            <p>
+              Nếu bạn nhận được bất kỳ triệu chứng COVID-19, hãy tự đánh giá lại.
+            </p>
+            <p>
+              Nếu bạn đang gặp phải các triệu chứng khác và muốn đánh giá, hãy truy cập <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
+            </p>
+
+          </div>
+
+
+
+
+
+          <br/>
+          <br/>
+          <div class="fb-share-button" data-href="https://lambdademy.github.io/covid19-selfcheck/" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flambdademy.github.io%2Fcovid19-selfcheck%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a>
+          </div>
+          <p></p>
+          <div class="fb-comments" data-href="https://lambdademy.github.io/covid19-selfcheck/" data-width="" data-numposts="50"></div>
         </div>
-        <div class="column"> <div class="fb-comments" data-href="https://lambdademy.github.io/covid19-selfcheck/" data-width="" data-numposts="50"></div></div>
+        <div class="column">
+          <img src="images/nghi-nhiem-covid19.jpg" alt="nghi-nhiem-covid19">
+
+        </div>
 
       </div>
 

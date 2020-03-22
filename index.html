@@ -9,6 +9,9 @@
 
 
     <style>
+      .img{
+        margin: 10px;
+      }
       .questionbox {
         border: gray 1px dashed;
         padding: 20px;
@@ -99,7 +102,7 @@
             </ul>
 
             <button class="button is-primary" v-on:click="setCase('a')">Không Đúng</button>
-            <button class="button is-link" v-on:click="setCase('yes')">Đúng</button>
+            <button class="button is-link" v-on:click="setConclusion('yes')">Đúng</button>
           </div>
 
           <div class="questionbox" v-if="cases.a">
@@ -115,7 +118,8 @@
             </ul>
 
             <button class="button is-primary" v-on:click="setCase('b')">Không Đúng</button>
-            <button class="button is-link" v-on:click="setCase('yes')">Đúng</button>
+            <button class="button is-link" v-on:click="setConclusion('yes')">Đúng</button>
+
           </div>
 
           <div class="questionbox" v-if="cases.b">
@@ -123,20 +127,28 @@
             <ul>
               <li>Sốt cao hơn 38°C      </li>
               <li>Ho</li>
-              <li>Hắt xì̀</li>
+
               <li>Hắt xì̀</li>
               <li>Đau họng</li>
               <li>Thở gấ p hoặc khó thở</li>
             </ul>
 
             <button class="button is-primary" v-on:click="setCase('c')">Không Đúng</button>
-            <button class="button is-link" v-on:click="setCase('stayhome')">Đúng</button>
+            <button class="button is-link" v-on:click="setConclusion('stayhome')">Đúng</button>
           </div>
 
 
 
           <div class="questionbox" v-if="cases.c">
-            <h3>(c) Trong 14 ngày qua, bạn có tiếp xúc gần với người được xác nhận là có COVID-19 không?</h3>
+            <h3>(c) Trong 14 ngày qua, bạn có đi đến những nơi có dịch tại Việt Nam hoặc quốc tế không, bạn có đi du lịch nước ngoài hoặc tới khu vực sân bay?</h3>
+
+
+            <button class="button is-primary" v-on:click="setCase('d')">Không Đúng</button>
+            <button class="button is-link"  v-on:click="setConclusion('selfisolate')">Đúng</button>
+          </div>
+
+          <div class="questionbox" v-if="cases.d">
+            <h3>(d) Trong 14 ngày qua, bạn có tiếp xúc gần với người có triệu chứng (ho, sốt, hắt xì, đau họng) hoặc được xác nhận hoặc nghi ngờ nhiễm COVID-19 không?</h3>
             Một người tiếp xúc gần là
             <ul>
               <li>Người chăm sóc cho cá nhân, bao gồm nhân viên y tế, thành viên gia đình hoặc người chăm sóc khác,
@@ -146,43 +158,21 @@
               <li>đã tiếp xúc trực tiếp với chất dịch truyền nhiễm cơ thể của người (ví dụ  bị ho hoặc hắt hơi) trong khi không đeo thiết bị bảo vệ cá nhân được khuyến nghị (khẩu trang y tế  hoặc găng tay)</li>
             </ul>
 
-            <button class="button is-primary">Không Đúng</button>
-            <button class="button is-link">Đúng</button>
-          </div>
-
-
-
-          <div class="questionbox" v-if="cases.travel">
-            <h3>Trong 14 ngày qua, bạn có đi du lịch nước ngoài hoặc tới những khu vực có người nhiễm COVID-19?</h3>
-
-            Bao gồm quá cảnh hoặc đi qua khu vực sân bay.
-
-            <button class="button is-primary">Không Đúng</button>
-            <button class="button is-link">Đúng</button>
-          </div>
-
-
-          <div class="questionbox" v-if="cases.closecontact">
-            <h3>Bạn có tiếp xúc với người đã được xác nhận là có COVID-19 trong vòng 14 ngày kể từ khi các triệu chứng của bạn bắt đầu không?</h3>
-
-
-            <button class="button is-primary">Không Đúng</button>
-            <button class="button is-link">Đúng</button>
+            <button class="button is-primary" v-on:click="setConclusion('healthdeclaration')">Không Đúng</button>
+            <button class="button is-link"  v-on:click="setConclusion('selfmonitor')">Đúng</button>
           </div>
 
 
 
 
-
-          <div class="questionbox" v-if="cases.no1">
+          <div class="questionbox" v-if="conclusion == 'healthdeclaration'">
             <h3>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h3>
             <p>
             Nếu bạn cảm thấy bất kỳ triệu chứng COVID-19, hãy tự đánh giá lại. Nếu bạn cần thêm thông tin, hãy truy cập <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
 
           </div>
 
-
-          <div class="questionbox" v-if="cases.no2">
+          <div class="questionbox" v-if="conclusion == 'selfmonitor'">
             <h3>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h3>
             <p>
               Tuy nhiên, có một cơ hội mà bạn có thể bị bệnh kể từ khi nó có ít hơn 14 ngày kể từ khi bạn đi du lịch. Bạn nên tự cách ly cho đến 14 ngày sau khi trở về nhà. Tự cô lập có nghĩa là don lồng đi đến bất kỳ nơi công cộng nào, ở nhà và don có bất kỳ du khách nào. Nếu bạn có thắc mắc, hãy truy cập https://www.saskatchewan.ca/coronavirus.
@@ -196,10 +186,59 @@
 
           </div>
 
-          <div class="questionbox" v-if="cases.yes">
-            <h3 style="color: darkred;">Vui lòng đến trực tiếp phòng cấp cứu gần nhất có kiểm tra COVID-19 bằng cách gọi cấp cứu 115, lập tức sử dụng bảo hộ cá nhân để tránh lây cho những người xung quanh.
-              Không nên tự di chuyển hoặc sử dụng các phương tiện công cộng, Taxi.
+          <div class="questionbox" v-if="conclusion == 'selfisolate'">
+            <h3>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h3>
+            <p>
+              Tuy nhiên, có một cơ hội mà bạn có thể bị bệnh kể từ khi nó có ít hơn 14 ngày kể từ khi bạn đi du lịch. Bạn nên tự cách ly cho đến 14 ngày sau khi trở về nhà. Tự cô lập có nghĩa là don lồng đi đến bất kỳ nơi công cộng nào, ở nhà và don có bất kỳ du khách nào. Nếu bạn có thắc mắc, hãy truy cập https://www.saskatchewan.ca/coronavirus.
+            </p>
+            <p>
+              Nếu bạn nhận được bất kỳ triệu chứng COVID-19, hãy tự đánh giá lại.
+            </p>
+            <p>
+              Nếu bạn đang gặp phải các triệu chứng khác và muốn đánh giá, hãy truy cập <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
+            </p>
+
+          </div>
+
+          <div class="questionbox" v-if="conclusion == 'yes'">
+            <h3 style="color: darkred;">
+              Vui lòng <b>ở tại nhà và không ra ngoài, sử  dụng khẩu trang, rửa tay và xúc miệng diệt khuẩn thường xuyên để tránh lây bệnh cho người thân</b>.</h3>
+              <ul>
+                <li>Hãy bình tĩnh, không hoảng loạng và tránh lây nhiễm ra người thân và cộng đồng</li>
+
+                <li>Thông báo cho người thân và những người liên quan bằng điện thoại, Zalo để  được hỗ trợ thực hiện tờ khai y tế  tại: <a href="https://tokhaiyte.vn/">https://tokhaiyte.vn/</a></li>
+                </li>
+                <li>Gọi cấp cứu hotline  1900-9095 hoặc 1900-3228 hoặc 115 để được đến trực tiếp phòng cấp cứu gần nhất có kiểm tra COVID-19 </li>
+                  <li>Không nên tự di chuyển hoặc sử dụng các phương tiện công cộng, Taxi.</li>
+                <li> Hãy thông báo cho người tiếp nhận là bạn đang có những triệu chứng của COVID-19.
+                </li>
+
+                <li>Hãy cẩn trọng trong mọi quyết định và hành động của mình để  giảm tối đa việc lây lân ra cộng đồng.
+                </li>
+                <li>Ghi chú ra giấy những địa điểm hoặc những người bạn đã tiếp xúc trong suốt 14 ngày qua
+                </li>
+
+              </ul>
+
               <br/>
+
+
+          </div>
+          <div class="questionbox" v-if="cases.stayhome">
+            <h3 style="color: darkred;">
+
+              Vui lòng <b>ở tại nhà và không ra ngoài, sử  dụng khẩu trang, rửa tay và xúc miệng diệt khuẩn thường xuyên để tránh lây bệnh cho người thân</b>.
+              <ul>
+                <li>Thực hiện tờ khai y tế  tại: <a href="https://tokhaiyte.vn/">https://tokhaiyte.vn/</a></li>
+                <li>Không tự đi khám hay kiểm tra y tế để tránh lây nhiễm ra cộng đồng</li>
+                <li>Không tự ra các nơi công cộng để mua đồ đạc mà hãy đặt trực tuyến hoặc gọi giao hàng</li>
+                <li>Liên hệ cơ quan y tế gần nhất chuyên trách hoặc gọi điện số  đường dây nóng: 1900-9095 hoặc 1900-3228</li>
+                <li>Thực hiện tự cách ly ít nhất 14 ngày cho dù bạn không thuộc diện nguy cơ</li>
+                <li>Không sử dụng chung bất cứ đồ đạc cá nhân nào: chén dĩa, dụng cụ nhà bếp, khăn tắm....</li>
+                <li>Trong trường hợp triệu chứng của bạn nặng lên, vui đến trực tiếp phòng cấp cứu gần nhất có kiểm tra COVID-19 bằng cách gọi cấp cứu 115, lập tức sử dụng bảo hộ cá nhân để tránh lây cho những người xung quanh.
+                  Không nên tự di chuyển hoặc sử dụng các phương tiện công cộng, Taxi.</li>
+              </ul>
+
               <br/>
               Hãy thông báo cho người tiếp nhận là bạn đang có những triệu chứng của COVID-19.</h3>
 
@@ -216,9 +255,12 @@
           <div class="fb-comments" data-href="https://lambdademy.github.io/covid19-selfcheck/" data-width="" data-numposts="50"></div>
         </div>
         <div class="column">
-          <img style="width: 100%" src="images/canh-bao-covid19.jpg" alt="canh-bao-covid19">
-          <img style="width: 100%" src="images/nghi-nhiem-covid19.jpg" alt="nghi-nhiem-covid19">
-          <img style="width: 100%" src="images/loi-khuyen-covid19.jpg" alt="loi-khuyen-covid19">
+          <div class="img">
+          <img style="width: 100%" src="images/canh-bao-covid19.jpg" alt="canh-bao-covid19"></div>
+          <div class="img">
+            <img style="width: 100%" src="images/nghi-nhiem-covid19.jpg" alt="nghi-nhiem-covid19"></div>
+          <div class="img">
+            <img style="width: 100%" src="images/loi-khuyen-covid19.jpg" alt="loi-khuyen-covid19"></div>
           <blockquote>
             Mã nguồn: <a href="https://github.com/lambdademy/covid19-selfcheck">https://github.com/lambdademy/covid19-selfcheck</a>
           </blockquote>
@@ -235,13 +277,15 @@
         'a': false,
         'b': false,
         'c': false,
-        'yes': false,
+        'd': false,
+
       };
 
       new Vue({
         el: "#app",
         data: {
-          cases: cases_default
+          cases: cases_default,
+          conclusion: ''
         },
         computed: {
 
@@ -249,15 +293,12 @@
         methods: {
           setCase: function(c){
             console.log("case: " + c);
-
-            if (c === 'yes'){
-              console.log("c === 'yes'");
-              this.cases = cases_default
-            } else {
-              this.cases['yes'] = false;
-            }
             this.cases[c] = true;
+            this.conclusion = null;
 
+          },
+          setConclusion: function(c){
+            this.conclusion = c;
 
           }
 

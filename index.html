@@ -128,7 +128,7 @@
               <li>Sốt cao hơn 38°C      </li>
               <li>Ho</li>
 
-              <li>Hắt xì̀</li>
+              <li>Hắt xì</li>
               <li>Đau họng</li>
               <li>Thở gấ p hoặc khó thở</li>
             </ul>
@@ -166,14 +166,21 @@
 
 
           <div class="questionbox" v-if="conclusion == 'healthdeclaration'">
-            <h3>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h3>
-            <p>
-            Nếu bạn cảm thấy bất kỳ triệu chứng COVID-19, hãy tự đánh giá lại. Nếu bạn cần thêm thông tin, hãy truy cập <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
+            <h3>Hãy Khai Báo Y Tế</h3>
+            <h4>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h4>
+            <p> Những việc bạn cần làm bao gồm
+              <ul>
+              <li>Thực hiện tờ khai y tế  tại: <a href="https://tokhaiyte.vn/">https://tokhaiyte.vn/</a></li></li>
+              <li>Nếu bạn cảm thấy bất kỳ triệu chứng COVID-19, hãy tự đánh giá lại.</li>
+            </ul>
+
+              Nếu bạn cần thêm thông tin, hãy truy cập <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
 
           </div>
 
           <div class="questionbox" v-if="conclusion == 'selfmonitor'">
-            <h3>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h3>
+            <h3>Liên tục theo dõi sức khoẻ cá nhân</h3>
+            <h4>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h4>
             <p>
               Tuy nhiên, có một cơ hội mà bạn có thể bị bệnh kể từ khi nó có ít hơn 14 ngày kể từ khi bạn đi du lịch. Bạn nên tự cách ly cho đến 14 ngày sau khi trở về nhà. Tự cô lập có nghĩa là don lồng đi đến bất kỳ nơi công cộng nào, ở nhà và don có bất kỳ du khách nào. Nếu bạn có thắc mắc, hãy truy cập https://www.saskatchewan.ca/coronavirus.
             </p>
@@ -187,7 +194,8 @@
           </div>
 
           <div class="questionbox" v-if="conclusion == 'selfisolate'">
-            <h3>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h3>
+            <h3>Cần tự cách ly</h3>
+            <h4>Vì bạn không có triệu chứng COVID-19, nên bạn không cần phải được xét nghiệm COVID-19.</h4>
             <p>
               Tuy nhiên, có một cơ hội mà bạn có thể bị bệnh kể từ khi nó có ít hơn 14 ngày kể từ khi bạn đi du lịch. Bạn nên tự cách ly cho đến 14 ngày sau khi trở về nhà. Tự cô lập có nghĩa là don lồng đi đến bất kỳ nơi công cộng nào, ở nhà và don có bất kỳ du khách nào. Nếu bạn có thắc mắc, hãy truy cập https://www.saskatchewan.ca/coronavirus.
             </p>
@@ -195,7 +203,8 @@
               Nếu bạn nhận được bất kỳ triệu chứng COVID-19, hãy tự đánh giá lại.
             </p>
             <p>
-              Nếu bạn đang gặp phải các triệu chứng khác và muốn đánh giá, hãy truy cập <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
+              Nếu bạn đang gặp phải các triệu chứng khác và muốn đánh giá, hãy truy cập
+              <a href="https://moh.gov.vn/tin-noi-bat/-/asset_publisher/3Yst7YhbkA5j/content/cap-nhat-thong-tin-ve-dich-benh-viem-uong-ho-hap-cap-covid-19-tong-hop-?inheritRedirect=false&redirect=https%3A%2F%2Fmoh.gov.vn%3A443%2Ftin-noi-bat%3Fp_p_id%3D101_INSTANCE_3Yst7YhbkA5j%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3Drow-1-column-1%26p_p_col_count%3D1">website Bộ Y Tế</a>. Đường dây nóng: 1900-9095 hoặc 1900-3228.</p>
             </p>
 
           </div>
@@ -245,6 +254,8 @@
 
           </div>
           <br/>
+          <h3>Làm lại</h3>
+          <p>Để thực hiện lại, bạn hãy click vào <a href=".">đây</a></p>
           <br/>
           <h3>Chia sẻ công cụ này</h3>
           <div class="fb-share-button" data-href="https://lambdademy.github.io/covid19-selfcheck/" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flambdademy.github.io%2Fcovid19-selfcheck%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a>

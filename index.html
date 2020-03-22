@@ -3,32 +3,12 @@
   <head>
     <title>Markdown Editor</title>
     <script src="https://unpkg.com/vue"></script>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulma-addons@0.1.17/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
 
     <meta charset="UTF-8">
 
 
     <style>
-      html,
-      body,
-      #editor {
-        margin: 0;
-        height: 100%;
-        font-family: "Helvetica Neue", Arial, sans-serif;
-        color: #333;
-      }
-
-
-      textarea {
-        border: none;
-        border-right: 1px solid #ccc;
-        resize: none;
-        outline: none;
-        background-color: #f6f6f6;
-        font-size: 14px;
-        font-family: "Monaco", courier, monospace;
-        padding: 20px;
-      }
 
 
     </style>
@@ -37,14 +17,62 @@
   <body>
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=719690998442071&autoLogAppEvents=1"></script>
-    <div id="editor">
-      <h1> Cộng cụ tự đánh giá về  khả năng mắc COVID-19</h1>
+  <section class="section">
+    <div class="container" id="app">
+      <div class="columns content is-medium">
+        <div class="column">
+          <h1 class="is-large"> Công cụ tự đánh giá về  khả năng mắc COVID-19</h1>
+          <p>This self-assessment tool, developed with the BC Ministry of Health, will help determine whether you may need further assessment or testing for COVID-19. You can complete this assessment for yourself, or on behalf of someone else, if they are unable to.</p>
+          <h3>Who should be tested for COVID-19?</h3>
+          <p>
+            People with respiratory symptoms who are:
+            <ul>
+              <li>Hospitalized, or likely to be hospitalized
+              </li>
+              <li>Health Care Workers
+              </li>
+              <li>Residents of long term care facilities
+              </li>
+              <li>Part of an investigation of a cluster or outbreak
+              </li>
+            </ul>
+          </p>
+          <h3>Who should be tested for COVID-19?</h3>
+          <p>
+            Who does not need to be tested for COVID-19?
+            <ul>
+              <li>People without symptoms
+              </li>
+              <li>Patients with mild respiratory symptoms who can be managed at home, including returning travellers with an onset of illness within 14 days of return to Canada
+              </li>
+
+            </ul>
+
+          </p>
+
+          <p>
+            The BC Ministry of Health strongly urges anyone who has symptoms - including a fever, cough, sneezing, sore throat, or difficulty breathing - to self-isolate for 14 days. To protect yourself while out in public, wash your hands frequently and maintain a distance of about 2 metres from others. For more information on COVID-19, refer to BCCDC's COVID-19 website.
+          </p>
+
+          <blockquote>
+            The province has created a phone service to provide non-medical information about COVID-19, including the latest information on travel recommendations and social distancing. Information is available in more than 110 languages, 7:30 a.m. - 8 p.m. Pacific Standard Time at 1-888-COVID19 (1-888-268-4319) or via text message at 604-630-0300.
+
+            For the most up to date non-medical information, including the latest travel restrictions and provincial and federal programs, visit the BC Government’s COVID-19 Provincial Support and Information.
+          </blockquote>
+
+          <div class="fb-share-button" data-href="https://lambdademy.github.io/covid19-selfcheck/" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flambdademy.github.io%2Fcovid19-selfcheck%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+        </div>
+        <div class="column"> <div class="fb-comments" data-href="https://lambdademy.github.io/covid19-selfcheck/" data-width="" data-numposts="50"></div></div>
+
+      </div>
+
     </div>
-  <div class="fb-comments" data-href="https://lambdademy.github.io/covid19-selfcheck/" data-width="" data-numposts="50"></div>
+  </section>
+
 
     <script>
       new Vue({
-        el: "#editor",
+        el: "#app",
         data: {
           input: "# hello"
         },
